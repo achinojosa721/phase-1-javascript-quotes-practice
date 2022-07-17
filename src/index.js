@@ -36,7 +36,7 @@ newQuoteForm.addEventListener("submit", (e) => {
 
     function turnQuoteIntoHTML(quoteObj){
         
-        //START CREATING OUTERMOST ELEMENT
+        
         let outerElement = document.createElement("li")
         outerElement.className = "quote-card"
         //FILL THE OUTERMOST ELEMENT USING INNER HTML
@@ -47,14 +47,14 @@ newQuoteForm.addEventListener("submit", (e) => {
         <button class='btn-success'>Likes: <span>${quoteObj.likes.length}</span></button>
         <button class='btn-danger'>Delete</button>
       </blockquote>`
-        //APPEND THE OUTERMOST ELEMENT TO THE DOM
+        
       quotesList.append(outerElement)
 
-      //GRAB THE ELEMENTS FROM THE OUTERELEMENT
+      
       let deleteButton = outerElement.querySelector(".btn-danger")
       let likeButton = outerElement.querySelector(".btn-success") 
       let likeSpan = outerElement.querySelector("span") 
-      //ADD EVENT LISTENERS
+      
 
       deleteButton.addEventListener("click", () => {
         fetch(`http://localhost:3000/quotes${quoteObj.id}`, {
